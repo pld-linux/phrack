@@ -1,6 +1,5 @@
 #TODO
-# - make it build
-# - simplify it around %setup (?)
+# - some common notes or index in -base?
 # - check license !
 Summary:	phrack - hackers magazine - from first to last
 Summary(pl):	phrack - periodyck hakerów - od pocz±tku do koñca
@@ -137,13 +136,25 @@ BuildArch:	noarch
 phrack - issues 01 to 60.
 
 %description -l pl
-phrack - wydania od 1 do 60.
+phrack - wydania od 01 do 60.
+
+%package base
+Summary:	Base package for all issues of phrack
+Summary(pl):	Pakiet podstawowy dla wszystkich wydañ magazynu phrack
+Group:		Documentation
+
+%description base
+Base package for all issues of phrack.
+
+%description base -l pl
+Pakiet podstawowy dla wszystkich wydañ magazynu phrack.
 
 %package issue01to10
 Summary:	phrack - issues 01 to 10
-Summary(pl):	phrack - wydania od 1 do 10
+Summary(pl):	phrack - wydania od 01 do 10
 Version:	1
 Group:		Documentation
+Requires:	%{name}-base
 
 %description issue01to10
 This package contains first ten issues of phrack.
@@ -156,6 +167,7 @@ Summary:	phrack - issues 11 to 20
 Summary(pl):	phrack - wydania od 11 do 20
 Version:	1
 Group:		Documentation
+Requires:	%{name}-base
 
 %description issue11to20
 This package contains issues from 11 to 20 of phrack.
@@ -168,6 +180,7 @@ Summary:	phrack - issues 21 to 30
 Summary(pl):	phrack - wydania od 21 do 30
 Version:	1
 Group:		Documentation
+Requires:	%{name}-base
 
 %description issue21to30
 This package contains issues from 21 to 30 of phrack.
@@ -180,6 +193,7 @@ Summary:	phrack - issues 31 to 40
 Summary(pl):	phrack - wydania od 31 do 40
 Version:	1
 Group:		Documentation
+Requires:	%{name}-base
 
 %description issue31to40
 This packages contains issues from 31 to 40 of phrack.
@@ -192,6 +206,7 @@ Summary:	phrack - issues 41 to 50
 Summary(pl):	phrack - wydania od 41 do 50
 Version:	1
 Group:		Documentation
+Requires:	%{name}-base
 
 %description issue41to50
 This packages contains issues from 41 to 50 of phrack.
@@ -204,6 +219,7 @@ Summary:	phrack - issues 51 to 60
 Summary(pl):	phrack - wydania od 51 do 60
 Version:	1
 Group:		Documentation
+Requires:	%{name}-base
 
 %description issue51to60
 This packages contains issues from 51 to 60 of phrack.
@@ -212,7 +228,10 @@ This packages contains issues from 51 to 60 of phrack.
 Ten pakiet zawiera wydania od 51 do 60 phrack.
 
 %prep
-%setup -q -n %{name}%(for x in `echo 01 02 03 04 05 06 07 08 09 10;seq 10 60`;do echo $x;done)
+%setup -qc -a%(seq -s' -a' 1 59)
+
+mv -f Phrack55 phrack55
+mv -f Phrack56 phrack56
 
 %install
 rm -rf $RPM_BUILD_ROOT
@@ -222,73 +241,85 @@ cp -ar * $RPM_BUILD_ROOT%{_defaultdocdir}/phrack
 %clean
 rm -rf $RPM_BUILD_ROOT
 
+%files base
+%defattr(644,root,root,755)
+%dir %{_defaultdocdir}/phrack
+# TODO: some common notes, index?
+
 %files issue01to10
 %defattr(644,root,root,755)
-%{_defaultdocdir}/phrack/issue01to08
-%{_defaultdocdir}/phrack/issue09
-%{_defaultdocdir}/phrack/issue10
+%{_defaultdocdir}/phrack/phrack01
+%{_defaultdocdir}/phrack/phrack02
+%{_defaultdocdir}/phrack/phrack03
+%{_defaultdocdir}/phrack/phrack04
+%{_defaultdocdir}/phrack/phrack05
+%{_defaultdocdir}/phrack/phrack06
+%{_defaultdocdir}/phrack/phrack07
+%{_defaultdocdir}/phrack/phrack08
+%{_defaultdocdir}/phrack/phrack09
+%{_defaultdocdir}/phrack/phrack10
 
 %files issue11to20
 %defattr(644,root,root,755)
-%{_defaultdocdir}/phrack/issue11
-%{_defaultdocdir}/phrack/issue12
-%{_defaultdocdir}/phrack/issue13
-%{_defaultdocdir}/phrack/issue14
-%{_defaultdocdir}/phrack/issue15
-%{_defaultdocdir}/phrack/issue16
-%{_defaultdocdir}/phrack/issue17
-%{_defaultdocdir}/phrack/issue18
-%{_defaultdocdir}/phrack/issue19
-%{_defaultdocdir}/phrack/issue20
+%{_defaultdocdir}/phrack/phrack11
+%{_defaultdocdir}/phrack/phrack12
+%{_defaultdocdir}/phrack/phrack13
+%{_defaultdocdir}/phrack/phrack14
+%{_defaultdocdir}/phrack/phrack15
+%{_defaultdocdir}/phrack/phrack16
+%{_defaultdocdir}/phrack/phrack17
+%{_defaultdocdir}/phrack/phrack18
+%{_defaultdocdir}/phrack/phrack19
+%{_defaultdocdir}/phrack/phrack20
 
 %files issue21to30
 %defattr(644,root,root,755)
-%{_defaultdocdir}/phrack/issue21
-%{_defaultdocdir}/phrack/issue22
-%{_defaultdocdir}/phrack/issue23
-%{_defaultdocdir}/phrack/issue24
-%{_defaultdocdir}/phrack/issue25
-%{_defaultdocdir}/phrack/issue26
-%{_defaultdocdir}/phrack/issue27
-%{_defaultdocdir}/phrack/issue28
-%{_defaultdocdir}/phrack/issue29
-%{_defaultdocdir}/phrack/issue30
+%{_defaultdocdir}/phrack/phrack21
+%{_defaultdocdir}/phrack/phrack22
+%{_defaultdocdir}/phrack/phrack23
+%{_defaultdocdir}/phrack/phrack24
+%{_defaultdocdir}/phrack/phrack25
+%{_defaultdocdir}/phrack/phrack26
+%{_defaultdocdir}/phrack/phrack27
+%{_defaultdocdir}/phrack/phrack28
+%{_defaultdocdir}/phrack/phrack29
+%{_defaultdocdir}/phrack/phrack30
 
 %files issue31to40
 %defattr(644,root,root,755)
-%{_defaultdocdir}/phrack/issue31
-%{_defaultdocdir}/phrack/issue32
-%{_defaultdocdir}/phrack/issue33
-%{_defaultdocdir}/phrack/issue34
-%{_defaultdocdir}/phrack/issue35
-%{_defaultdocdir}/phrack/issue36
-%{_defaultdocdir}/phrack/issue37
-%{_defaultdocdir}/phrack/issue38
-%{_defaultdocdir}/phrack/issue39
-%{_defaultdocdir}/phrack/issue40
+%{_defaultdocdir}/phrack/phrack31
+%{_defaultdocdir}/phrack/phrack32
+%{_defaultdocdir}/phrack/phrack33
+%{_defaultdocdir}/phrack/phrack34
+%{_defaultdocdir}/phrack/phrack35
+%{_defaultdocdir}/phrack/phrack36
+%{_defaultdocdir}/phrack/phrack37
+%{_defaultdocdir}/phrack/phrack38
+%{_defaultdocdir}/phrack/phrack39
+%{_defaultdocdir}/phrack/phrack40
 
 %files issue41to50
 %defattr(644,root,root,755)
-%{_defaultdocdir}/phrack/issue41
-%{_defaultdocdir}/phrack/issue42
-%{_defaultdocdir}/phrack/issue43
-%{_defaultdocdir}/phrack/issue44
-%{_defaultdocdir}/phrack/issue45
-%{_defaultdocdir}/phrack/issue46
-%{_defaultdocdir}/phrack/issue47
-%{_defaultdocdir}/phrack/issue48
-%{_defaultdocdir}/phrack/issue49
-%{_defaultdocdir}/phrack/issue50
+%{_defaultdocdir}/phrack/phrack41
+%{_defaultdocdir}/phrack/phrack42
+%{_defaultdocdir}/phrack/phrack43
+%{_defaultdocdir}/phrack/phrack44
+%{_defaultdocdir}/phrack/phrack45
+%{_defaultdocdir}/phrack/phrack46
+%{_defaultdocdir}/phrack/phrack47
+%{_defaultdocdir}/phrack/phrack48
+%{_defaultdocdir}/phrack/phrack49
+%{_defaultdocdir}/phrack/phrack50
 
 %files issue51to60
 %defattr(644,root,root,755)
-%{_defaultdocdir}/phrack/issue51
-%{_defaultdocdir}/phrack/issue52
-%{_defaultdocdir}/phrack/issue53
-%{_defaultdocdir}/phrack/issue54
-%{_defaultdocdir}/phrack/issue55
-%{_defaultdocdir}/phrack/issue56
-%{_defaultdocdir}/phrack/issue57
-%{_defaultdocdir}/phrack/issue58
-%{_defaultdocdir}/phrack/issue59
-%{_defaultdocdir}/phrack/issue60
+%{_defaultdocdir}/phrack/phrack51
+%{_defaultdocdir}/phrack/phrack52
+%{_defaultdocdir}/phrack/phrack53
+%{_defaultdocdir}/phrack/phrack54
+%{_defaultdocdir}/phrack/phrack55
+%{_defaultdocdir}/phrack/phrack56
+%{_defaultdocdir}/phrack/phrack57
+%{_defaultdocdir}/phrack/phrack58
+%{_defaultdocdir}/phrack/phrack59
+%{_defaultdocdir}/phrack/phrack60
