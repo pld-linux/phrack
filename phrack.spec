@@ -1,3 +1,7 @@
+#TODO
+# - make it build
+# - simplify it around %setup (?)
+# - check license !
 Summary:	phrack - hackers magazine - from first to last
 Summary(pl):	phrack - periodyck hakerów - od pocz±tku do koñca
 Name:		phrack
@@ -5,14 +9,14 @@ Version:	60
 Release:	1
 License:	propably distributable
 Group:		Documentation
-Source0:	http://www.phrack.org/archives/%{name}01.tar.gz
-Source1:	http://www.phrack.org/archives/%{name}02.tar.gz
-Source2:	http://www.phrack.org/archives/%{name}03.tar.gz
-Source3:	http://www.phrack.org/archives/%{name}04.tar.gz
-Source4:	http://www.phrack.org/archives/%{name}05.tar.gz
-Source5:	http://www.phrack.org/archives/%{name}06.tar.gz
-Source6:	http://www.phrack.org/archives/%{name}07.tar.gz
-Source7:	http://www.phrack.org/archives/%{name}08.tar.gz
+Source1:	http://www.phrack.org/archives/%{name}01.tar.gz
+Source2:	http://www.phrack.org/archives/%{name}02.tar.gz
+Source3:	http://www.phrack.org/archives/%{name}03.tar.gz
+Source4:	http://www.phrack.org/archives/%{name}04.tar.gz
+Source5:	http://www.phrack.org/archives/%{name}05.tar.gz
+Source6:	http://www.phrack.org/archives/%{name}06.tar.gz
+Source7:	http://www.phrack.org/archives/%{name}07.tar.gz
+Source8:	http://www.phrack.org/archives/%{name}08.tar.gz
 Source9:	http://www.phrack.org/archives/%{name}09.tar.gz
 Source10:	http://www.phrack.org/archives/%{name}10.tar.gz
 Source11:	http://www.phrack.org/archives/%{name}11.tar.gz
@@ -70,10 +74,10 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 BuildArch:	noarch
 
 %description
-phrack - issues 01 to 80.
+phrack - issues 01 to 60.
 
 %description -l pl
-phrack - wydania od 1 do 80.
+phrack - wydania od 1 do 60.
 
 %package issue01to10
 Summary:	phrack - issues 01 to 10
@@ -148,7 +152,7 @@ This packages contains issues from 51 to 60 of phrack.
 Ten pakiet zawiera wydania od 51 do 60 phrack.
 
 %prep
-%setup -q -n lg -b%(seq -s' -b' 1 60)
+%setup -q -n %{name}%(for x in `echo 01 02 03 04 05 06 07 08 09 10;seq 10 60`;do echo $x;done)
 
 %install
 rm -rf $RPM_BUILD_ROOT
