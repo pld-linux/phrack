@@ -129,6 +129,7 @@ Source58:	http://www.phrack.org/archives/%{name}59.tar.gz
 Source59:	http://www.phrack.org/archives/%{name}60.tar.gz
 # Source59-md5:	85af723ead3aa14e5bb06ececbe8a488
 Source60:	http://www.phrack.org/archives/%{name}61.tar.gz
+# Source60-md5:	da5e7472ddf2638076487c1663f9b030
 URL:		http://www.phrack.org/
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 BuildArch:	noarch
