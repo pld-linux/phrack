@@ -4,7 +4,7 @@
 Summary:	phrack - hackers magazine - from first to last
 Summary(pl):	phrack - periodyk hakerów - od pocz±tku do koñca
 Name:		phrack
-Version:	61
+Version:	62
 Release:	1
 License:	distributable
 Group:		Documentation
@@ -125,11 +125,13 @@ Source56:	http://www.phrack.org/archives/%{name}57.tar.gz
 Source57:	http://www.phrack.org/archives/%{name}58.tar.gz
 # Source57-md5:	d3b3d04975f79945ed7904b3c816a346
 Source58:	http://www.phrack.org/archives/%{name}59.tar.gz
-# Source58-md5:	405678241649a41e7165523f11514aba
+# Source58-md5:	cf848b5811f437f50e26eb2e8f089c1d
 Source59:	http://www.phrack.org/archives/%{name}60.tar.gz
 # Source59-md5:	85af723ead3aa14e5bb06ececbe8a488
 Source60:	http://www.phrack.org/archives/%{name}61.tar.gz
-# Source60-md5:	da5e7472ddf2638076487c1663f9b030
+# Source60-md5:	d84b8090763975c4a6caed62c18bbb76
+Source61:	http://www.phrack.org/archives/%{name}62.tar.gz
+# Source61-md5:	24ef6c7192d7d51396d936c963fb1028
 URL:		http://www.phrack.org/
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 BuildArch:	noarch
@@ -243,7 +245,7 @@ This packages contains issues from 61 to 70 of phrack.
 Ten pakiet zawiera wydania od 61 do 70 phrack.
 
 %prep
-%setup -qc -a%(seq -s' -a' 1 60)
+%setup -qc -a%(seq -s' -a' 1 61)
 
 mv -f Phrack55 phrack55
 mv -f Phrack56 phrack56
@@ -342,3 +344,4 @@ rm -rf $RPM_BUILD_ROOT
 %files issue61to70
 %defattr(644,root,root,755)
 %{_defaultdocdir}/phrack/phrack61
+%{_defaultdocdir}/phrack/phrack62
