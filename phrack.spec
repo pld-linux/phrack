@@ -1,12 +1,12 @@
 #TODO
 # - some common notes or index in -base?
-# - check license !
+
 Summary:	phrack - hackers magazine - from first to last
 Summary(pl):	phrack - periodyck hakerów - od pocz±tku do koñca
 Name:		phrack
 Version:	60
 Release:	1
-License:	propably distributable
+License:	distributable
 Group:		Documentation
 Source0:	http://www.phrack.org/archives/%{name}01.tar.gz
 # Source0-md5:	e5a056ef35450bf355647dc8dc4b600f
