@@ -2,9 +2,9 @@
 # - some common notes or index in -base?
 
 Summary:	phrack - hackers magazine - from first to last
-Summary(pl):	phrack - periodyck hakerów - od pocz±tku do koñca
+Summary(pl):	phrack - periodyk hakerów - od pocz±tku do koñca
 Name:		phrack
-Version:	60
+Version:	61
 Release:	1
 License:	distributable
 Group:		Documentation
@@ -128,6 +128,7 @@ Source58:	http://www.phrack.org/archives/%{name}59.tar.gz
 # Source58-md5:	405678241649a41e7165523f11514aba
 Source59:	http://www.phrack.org/archives/%{name}60.tar.gz
 # Source59-md5:	85af723ead3aa14e5bb06ececbe8a488
+Source60:	http://www.phrack.org/archives/%{name}61.tar.gz
 URL:		http://www.phrack.org/
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 BuildArch:	noarch
@@ -227,8 +228,21 @@ This packages contains issues from 51 to 60 of phrack.
 %description issue51to60 -l pl
 Ten pakiet zawiera wydania od 51 do 60 phrack.
 
+%package issue61to70
+Summary:	phrack - issues 61 to 70
+Summary(pl):	phrack - wydania od 61 do 70
+Version:	1
+Group:		Documentation
+Requires:	%{name}-base
+
+%description issue61to70
+This packages contains issues from 61 to 70 of phrack.
+
+%description issue61to70 -l pl
+Ten pakiet zawiera wydania od 61 do 70 phrack.
+
 %prep
-%setup -qc -a%(seq -s' -a' 1 59)
+%setup -qc -a%(seq -s' -a' 1 60)
 
 mv -f Phrack55 phrack55
 mv -f Phrack56 phrack56
@@ -323,3 +337,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_defaultdocdir}/phrack/phrack58
 %{_defaultdocdir}/phrack/phrack59
 %{_defaultdocdir}/phrack/phrack60
+
+%files issue61to70
+%defattr(644,root,root,755)
+%{_defaultdocdir}/phrack/phrack61
