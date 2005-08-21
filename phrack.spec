@@ -4,7 +4,7 @@
 Summary:	phrack - hackers magazine - from first to last
 Summary(pl):	phrack - periodyk hakerów - od pocz±tku do koñca
 Name:		phrack
-Version:	62
+Version:	63
 Release:	1
 License:	distributable
 Group:		Documentation
@@ -132,6 +132,8 @@ Source60:	http://www.phrack.org/archives/%{name}61.tar.gz
 # Source60-md5:	d84b8090763975c4a6caed62c18bbb76
 Source61:	http://www.phrack.org/archives/%{name}62.tar.gz
 # Source61-md5:	24ef6c7192d7d51396d936c963fb1028
+Source62:	http://www.phrack.org/archives/%{name}63.tar.gz
+# Source62-md5:	e0dc16b768022d7107929dc01b5a3a2c
 URL:		http://www.phrack.org/
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 BuildArch:	noarch
@@ -245,7 +247,7 @@ This packages contains issues from 61 to 70 of phrack.
 Ten pakiet zawiera wydania od 61 do 70 phrack.
 
 %prep
-%setup -qc -a%(seq -s' -a' 1 61)
+%setup -qc -a%(seq -s' -a' 1 62)
 
 mv -f Phrack55 phrack55
 mv -f Phrack56 phrack56
@@ -345,3 +347,4 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %{_defaultdocdir}/phrack/phrack61
 %{_defaultdocdir}/phrack/phrack62
+%{_defaultdocdir}/phrack/phrack63
