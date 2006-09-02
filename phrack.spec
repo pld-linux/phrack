@@ -1,6 +1,5 @@
-#TODO
+# TODO
 # - some common notes or index in -base?
-
 Summary:	phrack - hackers magazine - from first to last
 Summary(pl):	phrack - periodyk hakerów - od pocz±tku do koñca
 Name:		phrack
@@ -135,14 +134,14 @@ Source61:	http://www.phrack.org/archives/%{name}62.tar.gz
 Source62:	http://www.phrack.org/archives/%{name}63.tar.gz
 # Source62-md5:	e0dc16b768022d7107929dc01b5a3a2c
 URL:		http://www.phrack.org/
-BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 BuildArch:	noarch
+BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-phrack - issues 01 to 60.
+phrack - issues 01 to %{version}.
 
 %description -l pl
-phrack - wydania od 01 do 60.
+phrack - wydania od 01 do %{version}.
 
 %package base
 Summary:	Base package for all issues of phrack
@@ -254,97 +253,97 @@ mv -f Phrack56 phrack56
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT%{_defaultdocdir}/phrack
-cp -ar * $RPM_BUILD_ROOT%{_defaultdocdir}/phrack
+install -d $RPM_BUILD_ROOT%{_docdir}/phrack
+cp -a * $RPM_BUILD_ROOT%{_docdir}/phrack
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files base
 %defattr(644,root,root,755)
-%dir %{_defaultdocdir}/phrack
+%dir %{_docdir}/phrack
 # TODO: some common notes, index?
 
 %files issue01to10
 %defattr(644,root,root,755)
-%{_defaultdocdir}/phrack/phrack01
-%{_defaultdocdir}/phrack/phrack02
-%{_defaultdocdir}/phrack/phrack03
-%{_defaultdocdir}/phrack/phrack04
-%{_defaultdocdir}/phrack/phrack05
-%{_defaultdocdir}/phrack/phrack06
-%{_defaultdocdir}/phrack/phrack07
-%{_defaultdocdir}/phrack/phrack08
-%{_defaultdocdir}/phrack/phrack09
-%{_defaultdocdir}/phrack/phrack10
+%{_docdir}/phrack/phrack01
+%{_docdir}/phrack/phrack02
+%{_docdir}/phrack/phrack03
+%{_docdir}/phrack/phrack04
+%{_docdir}/phrack/phrack05
+%{_docdir}/phrack/phrack06
+%{_docdir}/phrack/phrack07
+%{_docdir}/phrack/phrack08
+%{_docdir}/phrack/phrack09
+%{_docdir}/phrack/phrack10
 
 %files issue11to20
 %defattr(644,root,root,755)
-%{_defaultdocdir}/phrack/phrack11
-%{_defaultdocdir}/phrack/phrack12
-%{_defaultdocdir}/phrack/phrack13
-%{_defaultdocdir}/phrack/phrack14
-%{_defaultdocdir}/phrack/phrack15
-%{_defaultdocdir}/phrack/phrack16
-%{_defaultdocdir}/phrack/phrack17
-%{_defaultdocdir}/phrack/phrack18
-%{_defaultdocdir}/phrack/phrack19
-%{_defaultdocdir}/phrack/phrack20
+%{_docdir}/phrack/phrack11
+%{_docdir}/phrack/phrack12
+%{_docdir}/phrack/phrack13
+%{_docdir}/phrack/phrack14
+%{_docdir}/phrack/phrack15
+%{_docdir}/phrack/phrack16
+%{_docdir}/phrack/phrack17
+%{_docdir}/phrack/phrack18
+%{_docdir}/phrack/phrack19
+%{_docdir}/phrack/phrack20
 
 %files issue21to30
 %defattr(644,root,root,755)
-%{_defaultdocdir}/phrack/phrack21
-%{_defaultdocdir}/phrack/phrack22
-%{_defaultdocdir}/phrack/phrack23
-%{_defaultdocdir}/phrack/phrack24
-%{_defaultdocdir}/phrack/phrack25
-%{_defaultdocdir}/phrack/phrack26
-%{_defaultdocdir}/phrack/phrack27
-%{_defaultdocdir}/phrack/phrack28
-%{_defaultdocdir}/phrack/phrack29
-%{_defaultdocdir}/phrack/phrack30
+%{_docdir}/phrack/phrack21
+%{_docdir}/phrack/phrack22
+%{_docdir}/phrack/phrack23
+%{_docdir}/phrack/phrack24
+%{_docdir}/phrack/phrack25
+%{_docdir}/phrack/phrack26
+%{_docdir}/phrack/phrack27
+%{_docdir}/phrack/phrack28
+%{_docdir}/phrack/phrack29
+%{_docdir}/phrack/phrack30
 
 %files issue31to40
 %defattr(644,root,root,755)
-%{_defaultdocdir}/phrack/phrack31
-%{_defaultdocdir}/phrack/phrack32
-%{_defaultdocdir}/phrack/phrack33
-%{_defaultdocdir}/phrack/phrack34
-%{_defaultdocdir}/phrack/phrack35
-%{_defaultdocdir}/phrack/phrack36
-%{_defaultdocdir}/phrack/phrack37
-%{_defaultdocdir}/phrack/phrack38
-%{_defaultdocdir}/phrack/phrack39
-%{_defaultdocdir}/phrack/phrack40
+%{_docdir}/phrack/phrack31
+%{_docdir}/phrack/phrack32
+%{_docdir}/phrack/phrack33
+%{_docdir}/phrack/phrack34
+%{_docdir}/phrack/phrack35
+%{_docdir}/phrack/phrack36
+%{_docdir}/phrack/phrack37
+%{_docdir}/phrack/phrack38
+%{_docdir}/phrack/phrack39
+%{_docdir}/phrack/phrack40
 
 %files issue41to50
 %defattr(644,root,root,755)
-%{_defaultdocdir}/phrack/phrack41
-%{_defaultdocdir}/phrack/phrack42
-%{_defaultdocdir}/phrack/phrack43
-%{_defaultdocdir}/phrack/phrack44
-%{_defaultdocdir}/phrack/phrack45
-%{_defaultdocdir}/phrack/phrack46
-%{_defaultdocdir}/phrack/phrack47
-%{_defaultdocdir}/phrack/phrack48
-%{_defaultdocdir}/phrack/phrack49
-%{_defaultdocdir}/phrack/phrack50
+%{_docdir}/phrack/phrack41
+%{_docdir}/phrack/phrack42
+%{_docdir}/phrack/phrack43
+%{_docdir}/phrack/phrack44
+%{_docdir}/phrack/phrack45
+%{_docdir}/phrack/phrack46
+%{_docdir}/phrack/phrack47
+%{_docdir}/phrack/phrack48
+%{_docdir}/phrack/phrack49
+%{_docdir}/phrack/phrack50
 
 %files issue51to60
 %defattr(644,root,root,755)
-%{_defaultdocdir}/phrack/phrack51
-%{_defaultdocdir}/phrack/phrack52
-%{_defaultdocdir}/phrack/phrack53
-%{_defaultdocdir}/phrack/phrack54
-%{_defaultdocdir}/phrack/phrack55
-%{_defaultdocdir}/phrack/phrack56
-%{_defaultdocdir}/phrack/phrack57
-%{_defaultdocdir}/phrack/phrack58
-%{_defaultdocdir}/phrack/phrack59
-%{_defaultdocdir}/phrack/phrack60
+%{_docdir}/phrack/phrack51
+%{_docdir}/phrack/phrack52
+%{_docdir}/phrack/phrack53
+%{_docdir}/phrack/phrack54
+%{_docdir}/phrack/phrack55
+%{_docdir}/phrack/phrack56
+%{_docdir}/phrack/phrack57
+%{_docdir}/phrack/phrack58
+%{_docdir}/phrack/phrack59
+%{_docdir}/phrack/phrack60
 
 %files issue61to70
 %defattr(644,root,root,755)
-%{_defaultdocdir}/phrack/phrack61
-%{_defaultdocdir}/phrack/phrack62
-%{_defaultdocdir}/phrack/phrack63
+%{_docdir}/phrack/phrack61
+%{_docdir}/phrack/phrack62
+%{_docdir}/phrack/phrack63
