@@ -4,7 +4,7 @@ Summary:	phrack - hackers magazine - from first to last
 Summary(pl):	phrack - periodyk hakerów - od pocz±tku do koñca
 Name:		phrack
 Version:	63
-Release:	1
+Release:	2
 License:	distributable
 Group:		Documentation
 Source0:	http://www.phrack.org/archives/%{name}01.tar.gz
@@ -250,6 +250,9 @@ Ten pakiet zawiera wydania od 61 do 70 phrack.
 
 mv -f Phrack55 phrack55
 mv -f Phrack56 phrack56
+
+# timestamp in the future - 2038
+touch phrack45/*
 
 %install
 rm -rf $RPM_BUILD_ROOT
