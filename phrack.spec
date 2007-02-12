@@ -1,7 +1,7 @@
 # TODO
 # - some common notes or index in -base?
 Summary:	phrack - hackers magazine - from first to last
-Summary(pl):	phrack - periodyk hakerów - od pocz±tku do koñca
+Summary(pl.UTF-8):   phrack - periodyk hakerÃ³w - od poczÄ…tku do koÅ„ca
 Name:		phrack
 Version:	63
 Release:	2
@@ -140,23 +140,23 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %description
 phrack - issues 01 to %{version}.
 
-%description -l pl
+%description -l pl.UTF-8
 phrack - wydania od 01 do %{version}.
 
 %package base
 Summary:	Base package for all issues of phrack
-Summary(pl):	Pakiet podstawowy dla wszystkich wydañ magazynu phrack
+Summary(pl.UTF-8):   Pakiet podstawowy dla wszystkich wydaÅ„ magazynu phrack
 Group:		Documentation
 
 %description base
 Base package for all issues of phrack.
 
-%description base -l pl
-Pakiet podstawowy dla wszystkich wydañ magazynu phrack.
+%description base -l pl.UTF-8
+Pakiet podstawowy dla wszystkich wydaÅ„ magazynu phrack.
 
 %package issue01to10
 Summary:	phrack - issues 01 to 10
-Summary(pl):	phrack - wydania od 01 do 10
+Summary(pl.UTF-8):   phrack - wydania od 01 do 10
 Version:	1
 Group:		Documentation
 Requires:	%{name}-base
@@ -164,12 +164,12 @@ Requires:	%{name}-base
 %description issue01to10
 This package contains first ten issues of phrack.
 
-%description issue01to10 -l pl
-Ten pakiet zawiera pierwsze dziesiêæ wydañ phrack.
+%description issue01to10 -l pl.UTF-8
+Ten pakiet zawiera pierwsze dziesiÄ™Ä‡ wydaÅ„ phrack.
 
 %package issue11to20
 Summary:	phrack - issues 11 to 20
-Summary(pl):	phrack - wydania od 11 do 20
+Summary(pl.UTF-8):   phrack - wydania od 11 do 20
 Version:	1
 Group:		Documentation
 Requires:	%{name}-base
@@ -177,12 +177,12 @@ Requires:	%{name}-base
 %description issue11to20
 This package contains issues from 11 to 20 of phrack.
 
-%description issue11to20 -l pl
+%description issue11to20 -l pl.UTF-8
 Ten pakiet zawiera wydania od 11 do 20 phrack.
 
 %package issue21to30
 Summary:	phrack - issues 21 to 30
-Summary(pl):	phrack - wydania od 21 do 30
+Summary(pl.UTF-8):   phrack - wydania od 21 do 30
 Version:	1
 Group:		Documentation
 Requires:	%{name}-base
@@ -190,12 +190,12 @@ Requires:	%{name}-base
 %description issue21to30
 This package contains issues from 21 to 30 of phrack.
 
-%description issue21to30 -l pl
+%description issue21to30 -l pl.UTF-8
 Ten pakiet zawiera wydania od 21 do 30 phrack.
 
 %package issue31to40
 Summary:	phrack - issues 31 to 40
-Summary(pl):	phrack - wydania od 31 do 40
+Summary(pl.UTF-8):   phrack - wydania od 31 do 40
 Version:	1
 Group:		Documentation
 Requires:	%{name}-base
@@ -203,12 +203,12 @@ Requires:	%{name}-base
 %description issue31to40
 This packages contains issues from 31 to 40 of phrack.
 
-%description issue31to40 -l pl
+%description issue31to40 -l pl.UTF-8
 Ten pakiet zawiera wydania od 31 do 40 phrack.
 
 %package issue41to50
 Summary:	phrack - issues 41 to 50
-Summary(pl):	phrack - wydania od 41 do 50
+Summary(pl.UTF-8):   phrack - wydania od 41 do 50
 Version:	1
 Group:		Documentation
 Requires:	%{name}-base
@@ -216,12 +216,12 @@ Requires:	%{name}-base
 %description issue41to50
 This packages contains issues from 41 to 50 of phrack.
 
-%description issue41to50 -l pl
+%description issue41to50 -l pl.UTF-8
 Ten pakiet zawiera wydania od 41 do 50 phrack.
 
 %package issue51to60
 Summary:	phrack - issues 51 to 60
-Summary(pl):	phrack - wydania od 51 do 60
+Summary(pl.UTF-8):   phrack - wydania od 51 do 60
 Version:	1
 Group:		Documentation
 Requires:	%{name}-base
@@ -229,12 +229,12 @@ Requires:	%{name}-base
 %description issue51to60
 This packages contains issues from 51 to 60 of phrack.
 
-%description issue51to60 -l pl
+%description issue51to60 -l pl.UTF-8
 Ten pakiet zawiera wydania od 51 do 60 phrack.
 
 %package issue61to70
 Summary:	phrack - issues 61 to 70
-Summary(pl):	phrack - wydania od 61 do 70
+Summary(pl.UTF-8):   phrack - wydania od 61 do 70
 Version:	1
 Group:		Documentation
 Requires:	%{name}-base
@@ -242,7 +242,7 @@ Requires:	%{name}-base
 %description issue61to70
 This packages contains issues from 61 to 70 of phrack.
 
-%description issue61to70 -l pl
+%description issue61to70 -l pl.UTF-8
 Ten pakiet zawiera wydania od 61 do 70 phrack.
 
 %prep
